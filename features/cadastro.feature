@@ -5,43 +5,26 @@ Funcionalidade: Cadastro de Usuários
     Quero fazer o meu cadastro
     Para que eu possa ouvir minhas músicas favoritas
 
-Cenário: Cadastro
-    Dado que acesso a página de cadastro
-    Quando submeto o meu cadastro com:
-        | email          | evertonsouza@yahoo.com.br |
-        | senha          | pwd123                    |
-        | senha_confirma | pwd123                    |
-    Então devo ser redirecionado para a área logada
+        Cenário: Cadastro
+            Dado que acesso a página de cadastro
+            Quando submeto o meu cadastro com:
+                | email          | evertonsouza@yahoo.com.br |
+                | senha          | pwd123                    |
+                | senha_confirma | pwd123                    |
+            Então devo ser redirecionado para a área logada
 
-Cenário: Email não informado
-    Dado que acesso a página de cadastro
-    Quando submeto o meu cadastro com:
-        | email          |                           |
-        | senha          | pwd123                    |
-        | senha_confirma | pwd123                    |
-    Então devo ver a mensagem: "Oops! Informe seu email."
+        Esquema do Cenário: Tentativa de cadastro
 
-Cenário: Senha não informada
-    Dado que acesso a página de cadastro
-    Quando submeto o meu cadastro com:
-        | email          | evertonsouza@yahoo.com.br |
-        | senha          |                           |
-        | senha_confirma | pwd123                    |
-    Então devo ver a mensagem: "Oops! Informe sua senha."
+            Dado que acesso a página de cadastro
+            Quando submeto o meu cadastro com:
+                | email          | <email>          |
+                | senha          | <senha>          |
+                | senha_confirma | <senha_confirma> |
+            Então devo ver a mensagem: "<mensagem_saida>"
 
-Cenário: Senha divergente
-    Dado que acesso a página de cadastro
-    Quando submeto o meu cadastro com:
-        | email          | evertonsouza@yahoo.com.br |
-        | senha          | pwd123                    |
-        | senha_confirma | abc123                    |
-    Então devo ver a mensagem: "Oops! Senhas não são iguais."
-
-Cenário: Nenhum campo preenchido
-    Dado que acesso a página de cadastro
-    Quando submeto o meu cadastro com:
-        | email          |                     |
-        | senha          |                     |
-        | senha_confirma |                     |
-    Então devo ver a mensagem: "Oops! Informe seu email e sua senha."
-
+            Exemplos:
+            | email                     | senha  | confirma_senha | mensagem_saida                       |
+            |                           | pwd123 | pwd123         | Oops! Informe seu email.             |
+            | evertonsouza@yahoo.com.br |        | pwd123         | Oops! Informe sua senha.             |
+            | evertonsouza@yahoo.com.br | pwd123 | abc123         | Oops! Senhas não são iguais.         |
+            |                           |        |                | Oops! Informe seu email e sua senha. |
