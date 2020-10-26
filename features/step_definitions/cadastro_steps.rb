@@ -3,8 +3,11 @@ Dado('que acesso a página de cadastro') do
     click_on "EXPERIMENTE AGORA"  
 end                                                                 
                                                                                  
-Quando('submeto o meu cadastro com:') do |table|                               
+Quando('submeto o meu cadastro com:') do |table|
     user = table.rows_hash
+
+    delorean user[:email]
+
     find("input[name*=email]").set user[:email]
     find("input[placeholder='Sua senha secreta']").set user[:senha]
     find("input[placeholder='Confirme a senha']").set user[:senha_confirma]
