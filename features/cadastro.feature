@@ -28,3 +28,9 @@ Funcionalidade: Cadastro de Usuários
             | evertonsouza@yahoo.com.br |        | pwd123         | Oops! Informe sua senha.             |
             | evertonsouza@yahoo.com.br | pwd123 | abc123         | Oops! Senhas não são iguais.         |
             |                           |        |                | Oops! Informe seu email e sua senha. |
+    
+    @temp
+    Cenário: Validação do campo email
+
+        Quando acesso a página de cadastro
+        Então deve exibir o seguinte css: "input[type=email]"
