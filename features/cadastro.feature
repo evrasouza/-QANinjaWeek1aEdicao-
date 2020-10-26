@@ -11,7 +11,7 @@ Cenário: Cadastro
     Quando submeto o meu cadastro com:
         | email          | evertonsouza@yahoo.com.br |
         | senha          | pwd123                    |
-        | senha_confirma | pw123                     |
+        | senha_confirma | pwd123                     |
     Então devo ser redirecionado para a área logada
 
 Cenário: Email não informado
