@@ -5,11 +5,11 @@ Funcionalidade: Login
     Quero acessar o sistema com meu email e senha
     Para que eu possa ter acesso as playlists do Parodify
 
-    @login
+    @smoke
     Cenário: Login do usuário
 
         Dado que acesso a página de login
-        Quando submeto minhas credenciais com: "evertonsouza@yahoo.com.br" e "pwd123"
+        Quando submeto minhas credenciais com: "everton@gmail.com" e "pwd123"
         Então devo ser redirecionado para a área logada
 
     @login2
