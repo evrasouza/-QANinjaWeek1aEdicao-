@@ -29,7 +29,7 @@ Funcionalidade: Cadastro de Usuários
             | evertonsouza@yahoo.com.br | pwd123 | abc123         | Oops! Senhas não são iguais.         |
             |                           |        |                | Oops! Informe seu email e sua senha. |
     
-        @temp
+    @temp
     Cenário: Validação do campo email
 
         Quando acesso a página de cadastro
